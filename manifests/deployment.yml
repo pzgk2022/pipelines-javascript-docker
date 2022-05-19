@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pzgkpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pzgkpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: pzgkpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: pzgkpipelinesjavascriptdocker 
+          image: myacrforcloudmig.azurecr.io/pzgkpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
